@@ -1,0 +1,265 @@
+Code	Matrix		Keytop Legend	Key Number/Notes
+	Address
+(Hex)	(Hex/Ref)		(U.S. Layout)	(see fig. 3-5)
+
+00   | 	  30/F1     |     Help            |  9       Also:	Low byte of nothing to report |
+     |              |                     |                	and right port ID code        |
+01   |    1B/D17    |     Cursor Up)      |  65                                          |
+02   |    40/B1     |     Mark            |  90                                          |
+03   |    20/B2     |     Bound           |  91                                          |
+04   |    51/G2     |     Finish          |  2                                           |
+05   |    5D/G5     |     Page Prev       |  5                                           |
+06   |    61/E3     |                     |  29                                          |
+07   |    31/F2     |     Cancel          |  10                                          |
+08   |    6A/E16    |     Back Space      |  42                                          |
+09   |    12/D3     |     Tab             |  51                                          |
+0A   |    6B/D16    |     Return          |  64      Also: High byte of nothing to       |
+     |              |                     |                report code.                  |
+0B   |    2B/B16    |     (Cursor Dn)     |  104                                         |
+0C   |    5E/G6     |     Page Next       |  6                                           |
+0D   |    4F/C21    |     Next            |  89                                          |
+0E   |    4B/C16    |     (Cursor Left)   |  84                                          |
+0F   |    6C/C17    |     (Cursor Right)  |  85                                          |
+10   |    60/D1     |     Jump            |  49                                          |
+11   |    5F/G7     |     Scroll Next     |  7                                           |
+12   |    10/C1     |     Move            |  70                                          |
+13   |    3F/G8     |     Scroll Prev     |  8                                           |
+14   |    21/C2     |     Copy            |  71                                          |
+15   |    01/F3     |     F1              |  11                                          |
+16   |    52/F4     |     F2              |  12                                          |
+17   |    53/F5     |     F3              |  13                                          |
+18   |    55/F6     |     F4              |  14                                          |
+19   |    35/F7     |     F5              |  15                                          |
+1A   |    56/F8     |     F6              |  16                                          |
+1B   |    2C/A6     |     Go              |  113                                         |
+1C   |    57/F9     |     F7              |  17                                          |
+1D   |    59/F10    |     F8              |  18                                          |
+1E   |    5A/F11    |     F9              |  19                                          |
+1F   |    3A/F12    |     F10             |  20                                          |
+20   |    26/A3     |     (Space Bar)     |  110                                         |
+21   |    6E/E21    |     9               |  47     In Numeric Pad                       |
+22   |    11/E2     |     Delete Char     |  28                                          |
+23   |              |                     |  NA     Not Used                             |
+24   |    3E/F16    |     X (Multiply)    |  24     In Numeric Pad                       |
+25   |    OE/F17    |     (Divide)        |  25     In Numeric Pad                       |
+26   |    5B/G3     |      Col            |  3                                           |
+27   |    69/C14    |      '              |  83                                          |
+29   |    3B/F13    |       Para          |  21                                          |
+2A   |    3C/F14    |      Sent           |  22                                          |
+2B   |    0A/E15    |     =               |  41                                          |
+2C   |    48/B12    |     ,               |  100                                         |
+2D   |    39/E14    |     -               |  40                                          |
+2E   |    28/B13    |     .               |  101                                         |
+2F   |    49/B14    |     /               |  102                                         |
+30   |    38/E13    |     0               |  39                                          |
+31   |    02/E4     |     1               |  30                                          |
+32   |    32/E5     |     2               |  31                                          |
+33   |    33/E6     |     3               |  32                                          |
+34   |    54/E7     |     4               |  33                                          |
+35   |    34/E8     |     5               |  34                                          |
+36   |    05/E9     |     6               |  35                                          |
+37   |    36/E10    |     7               |  36                                          |
+38   |    37/E11    |     8               |  37                                          |
+39   |    58/E12    |     9               |  38                                          |
+3A   |    1F/D21    |     =               |  69     In Numeric Pad                       |
+3B   |    19/C13    |     ;               |  82                                          |
+3C   |    0B/E17    |     Word            |  43                                          |
+3D   |    0C/E18    |     Line            |  44                                          |
+3E   |    3D/F15    |     %               |  23     In Numeric Pad                       |
+3F   |              |                     |  NA                                          |
+40   |              |                     |  NA     Reserved                             |
+41   |    1E/D20    |      6              |  68     In Numeric Pad                       |
+42   |    0F/F18    |      -              |  26     In Numeric Pad                       |
+43   |    50/G1     |      Action         |  1                                           |
+44   |    41/D2     |      Over Type      |  50                                          |
+45   |    42/C3     |      Lock           |  72                                          |
+46   |    4D/C19    |      2              |  87     In Numeric Pad                       |
+47   |    4E/C20    |      3              |  88     In Numeric Pad                       |
+48   |    22/B3     |      Shift (Left)   |  92&92A                                      |
+49   |    2A/B15    |      Shift (Right)  |  103                                         |
+4A   |    2D/B17    |      0              |  105    In Numeric Pad                       |
+4B   |    2F/B19    |      .              |  107    In Numeric Pad                       |
+4C   |    23/A2     |      Code (Left)    |  109                                         |
+4D   |    29/A4     |      Code (Right)   |  111                                         |
+4E   |              |                     |  NA     Mode Format (1)                      |
+4F   |              |                     |  NA     Reserved                             |
+50   |              |                     |  NA     Reserved                             |
+51   |    7F/B20    |                     |  89     Currently Not Used                   |
+52   |    7A/A5     |      System         |  112                                         |
+53   |    72/A1     |      Alt            |  108                                         |
+54   |    6F/E22    |      +              |  48     In Numeric Pad                       |
+55   |              |                     |  NA                                          |
+56   |              |                     |  NA                                          |
+57   |              |                     |  NA                                          |
+58   |              |                     |  NA                                          |
+59   |    2E/B18    |      00             |  106    In Numeric Pad                       |
+5A   |    73/B4     |                     |  92B    115 Key Layout                       |
+5B   |    09/D14    |      [              |  62                                          |
+5C   |    0D/E19    |      7              |  45     In Numeric Pad                       |
+5D   |    1A/D15    |      ]              |  63                                          |
+5E   |    4A/C15    |                     |  64B    114 & 115 Key Layout                 |
+5F   |              |                     |  NA     Reserved                             |
+60   |    4C/C18    |      1              |  86     In Numeric Pad                       |
+61   |    13/C4     |      A              |  73                                          |
+62   |    46/B9     |     B               |  97                                          |
+63   |    24/B6     |     C               |  95                                          |
+64   |    14/C6     |     D               |  75                                          |
+65   |    64/D6     |     E               |  54                                          |
+66   |    45/C7     |     F               |  76                                          |
+67   |    15/C8     |     G               |  77                                          |
+68   |    16/C9     |     H               |  78                                          |
+69   |    07/D11    |     I               |  59                                          |
+6A   |    17/C10    |     J               |  79                                          |
+6B   |    67/C11    |     K               |  80                                          |
+6C   |    18/C12    |     L               |  81                                          |
+6D   |    27/B10    |     M               |  99                                          |
+6E   |    47/B10    |     N               |  98                                          |
+6F   |    68/D12    |     O               |  60                                          |
+70   |    08/D13    |     P               |  61                                          |
+71   |    62/D4     |     Q               |  52                                          |
+72   |    04/D7     |     R               |  55                                          |
+73   |    63/C5     |     S               |  74                                          |
+74   |    65/D8     |     T               |  56                                          |
+75   |    06/D10    |     U               |  58                                          |
+76   |    25/B7     |     V               |  96                                          |
+77   |    03/D5     |     W               |  53                                          |
+78   |    44/B6     |     X               |  94                                          |
+79   |    66/D9     |     Y               |  57                                          |
+7A   |    43/B5     |     Z               |  93                                          |
+7B   |    1C/D18    |     4               |  66     In Numeric Pad                       |
+7C   |    6D/E20    |     8               |  46     In Numeric Pad                       |
+7D   |    1D/D19    |     5               |  67     In Numeric Pad                       |
+7E   |              |                     |  NA     Reserved                             |
+7F   |    00/E1     |     Delete          |  27                                          |
+80   |              |                     |  NA                                          |
+81   |              |                     |  NA                                          |
+82   |              |                     |  NA                                          |
+83   |              |                     |  NA                                          |
+84   |              |                     |  NA                                          |
+85   |              |                     |  NA                                          |
+86   |              |                     |  NA                                          |
+87   |              |                     |  NA                                          |
+88   |              |                     |  NA                                          |
+89   |              |                     |  NA                                          |
+8A   |              |                     |  NA                                          |
+8B   |              |                     |  NA                                          |
+8C   |              |                     |  NA     Kbd Cmd: ROM checksum                |
+8D   |              |                     |  NA                                          |
+8E   |              |                     |  NA                                          |
+8F   |              |                     |  NA                                          |
+90   |              |                     |  NA                                          |
+91   |              |                     |  NA                                          |
+92   |              |                     |  NA     S/W reset                            |
+93   |              |                     |  NA     Reserved: HWID on                    |
+94   |              |                     |  NA     Reserved: HWID off                   |
+95   |              |                     |  NA                                          |
+96   |              |                     |  NA                                          |
+97   |              |                     |  NA                                          |
+98   |              |                     |  NA                                          |
+99   |              |                     |  NA                                          |
+9A   |              |                     |  NA                                          |
+9B   |              |                     |  NA                                          |
+9C   |              |                     |  NA                                          |
+9D   |              |                     |  NA                                          |
+9E   |              |                     |  NA     Kbd cmd: Echo                        |
+9F   |              |                     |  NA                                          |
+A0   |              |                     |  NA     Kbd cmd: L[0:3] Off                  |
+A1   |              |                     |  NA     Kbd cmd: L[0] On, L[1:3] Off         |
+A2   |              |                     |  NA     Kbd cmd: L[1] On, L[0,2:3] Off       |
+A3   |              |                     |  NA     Kbd cmd: L[0:1] On, L[2:3] Off       |
+A4   |              |                     |  NA     Kbd cmd: L[2] On, L[0:1,3] Off       |
+A5   |              |                     |  NA     Kbd cmd: L[0,2] On, L[1,3] Off       |
+A6   |              |                     |  NA     Kbd cmd: L[1:2] On, L[3:4] Off       |
+A7   |              |                     |  NA     Kbd cmd: L[0:2] On, L[3] Off         |
+A8   |              |                     |  	NA     Kbd cmd: L[3] On, L[0:2] Off         |
+A9   |              |                     |  	NA     Kbd cmd: L[0,3] On, L[1,2] Off       |
+AA   |              |                     |  	NA     Kbd cmd: L[1,3] On, L[0,2] Off       |
+AB   |              |                     |  	NA     Kbd cmd: L[0,1,3] On, L[2] Off       |
+AC   |              |                     |  	NA     Kbd cmd: L[2,3] On, L[0,1] Off       |
+AD   |              |                     |  	NA     Kbd cmd: L[O,2,3] On, L[1] Off       |
+AE   |              |                     |  	NA     Kbd cmd: L[1,2,3] On, L[0] Off       |
+AF   |              |                     |  	NA     Kbd cmd: L[0:3] On                   |
+B0   |              |                     |  	NA     Kbd cmd: L[4:7> Off                  |
+B1   |              |                     |  	NA     Kbd cmd: L[4] On, L[5:7] Off         |
+B2   |              |                     |  	NA     Kbd cmd: L[5] On, L[4,6:7] Off       |
+B3   |              |                     |  	NA     Kbd cmd: L[4:5] On, L[6:7] Off       |
+B4   |              |                     |  	NA     Kbd cmd: L[6] On, L[4:5,7] Off       |
+B5   |              |                     |  	NA     Kbd cmd: L[4,6] On, L[5,7] Off       |
+B6   |              |                     |  	NA     Kbd cmd: L[5:6] On, L[7:4] Off       |
+B7   |              |                     |  	NA     Kbd cmd: L[4:6] On, L[7] Off         |
+B8   |              |                     |  	NA     Kbd cmd: L[7] On, L[4:6] Off         |
+B9   |              |                     |  	NA     Kbd cmd: L[4,7] On, L[5,6] Off       |
+BA   |              |                     |  	NA     Kbd cmd: L[5,7] On, L[4,6] Off       |
+BB   |              |                     |  	NA     Kbd cmd: L[4,5,7] On, L[6] Off       |
+BC   |              |                     |  	NA     Kbd cmd: L[6,7] On, L[4,5] Off       |
+BD   |              |                     |  	NA     Kbd cmd: L[4,6,7] On, L[5] Off       |
+BE   |              |                     |  	NA     Kbd cmd: L[5,6,7] On, L[4] Off       |
+BF   |              |                     |  	NA     Kbd cmd: L[4:7] On                   |
+C0   |              |                     |  	NA     Kbd reset, all keys released; also   |
+     |              |                     |	         Kbd cmd: Port ident                  |
+C1   |              |                     |  	NA     Kbd cmd: indicator LED data byte     |
+C2   |              |                     |  	NA                                          |
+C3   |              |                     |  	NA                                          |
+C4   |              |                     |  	NA                                          |
+C5   |              |                     |  	NA                                          |
+C6   |              |                     |  	NA                                          |
+C7   |              |                     |  	NA                                          |
+C8   |              |                     |  	NA                                          |
+C9   |              |                     |  	NA                                          |
+CA   |              |                     |  	NA                                          |
+CB   |              |                     |  	NA                                          |
+CC   |              |                     |  	NA                                          |
+CD   |              |                     |  	NA                                          |
+CE   |              |                     |  	NA     Set IPTM (No data lost) or Set OPTM  |
+CF   |              |                     |  	NA     Set IPTM (Overun-data lost)          |
+D0   |              |                     |  	NA     Allow IPTM                           |
+D1   |              |                     |  	NA     Prevent IPTM                         |
+D2   |              |                     |  	NA                                          |
+D3   |              |                     |  	NA                                          |
+D4   |              |                     |  	NA                                          |
+D5   |              |                     |  	NA                                          |
+D6   |              |                     |  	NA                                          |
+D7   |              |                     |  	NA                                          |
+D8   |              |                     |  	NA                                          |
+D9   |              |                     |  	NA                                          |
+DA   |              |                     |  	NA                                          |
+DB   |              |                     |  	NA                                          |
+DC   |              |                     |  	NA                                          |
+DD   |              |                     |  	NA                                          |
+DF   |              |                     |  	NA     Reset IPTM or OPTM                   |
+E0   |              |                     |  	NA                                          |
+E1   |              |                     |  	NA                                          |
+E2   |              |                     |  	NA                                          |
+E3   |              |                     |  	NA                                          |
+E4   |              |                     |  	NA                                          |
+E5   |              |                     |  	NA                                          |
+E6   |              |                     |  	NA                                          |
+E7   |              |                     |  	NA                                          |
+E8   |              |                     |  	NA                                          |
+E9   |              |                     |  	NA                                          |
+EA   |              |                     |  	NA                                          |
+EB   |              |                     |  	NA                                          |
+EC   |              |                     |  	NA                                          |
+ED   |              |                     |  	NA                                          |
+EF   |              |                     |  NA                                          |
+F0   |              |                     |  NA     Keyboard response: ROM checksum OK   |
+F1   |              |                     |  NA                                          |
+F2   |              |                     |  NA                                          |
+F3   |              |                     |  NA                                          |
+F4   |              |                     |  NA                                          |
+F5   |              |                     |  NA                                          |
+F6   |              |                     |  NA                                          |
+F7   |              |                     |  NA                                          |
+F8   |              |                     |  NA                                          |
+F9   |              |                     |  NA                                          |
+FA   |              |                     |  NA                                          |
+FB   |              |                     |  NA                                          |
+FC   |              |                     |  NA                                          |
+FD   |              |                     |  NA                                          |
+FE   |              |                     |  NA     ID Sync byte                         |
+FF   |              |                     |  NA     Keyboard response: left port         |
+     |              |                     |         connected                            |
+
+Note:	In the first column (Hex/Ref), "Hex" refers to the key location in the matrix with the first digit indicating the sense line and the second digit indicating the drive line.  "Ref" refers to the physical position of the key with the first character indicating the row ("A" at the bottom) and the second digit indicating the column (with "1" at the left).
+
+	For example, an entry of "39/E14" in the "Hex/Ref" column indicates that the key is at the junction of sense line 3 and drive line 9.  Also, the key is located in the "E" row (4th from the bottom) and is the 14th key in that row (counting from the left).
