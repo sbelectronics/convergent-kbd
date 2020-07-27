@@ -14,6 +14,7 @@
 #include <Arduino.h>
 
 #include "convergent_scancode_map.h"
+#include "keypad.h"
 
 
 //PIN configuration
@@ -45,6 +46,8 @@
 #define CAPSLOCK_LEDBIT 0x04
 #define NUMLOCK_LEDBIT 0x02
 
+#define SCANCODE_NONE 0xFF
+
 #define LOW 0
 #define HIGH 1
 
@@ -52,7 +55,7 @@ volatile uint8_t kbd_data;
 volatile uint8_t kbd_event;
 volatile uint8_t ack_event, nak_event;
 volatile uint8_t next_extended, e1flag;
-volatile uint8_t key_state[32];
+volatile uint8_t key_state[16];
 volatile uint8_t disable_isr;
 volatile uint8_t shift_down;
 uint8_t convergent_code;
@@ -139,7 +142,7 @@ ISR(PCINT1_vect)
       release = 0;
       convergent_code = convergent_map_code(kbd_data, next_extended);
       next_extended = 0;
-      if (convergent_code != 0) {
+      if (convergent_code != SCANCODE_NONE) {
           uint8_t mask = 1<<(convergent_code & 0x07);
           key_state[convergent_code >> 3] &= ~mask;
           kbd_event = 1;
@@ -147,7 +150,7 @@ ISR(PCINT1_vect)
     } else {
       convergent_code = convergent_map_code(kbd_data, next_extended);
       next_extended = 0;
-      if (convergent_code != 0) {
+      if (convergent_code != SCANCODE_NONE) {
           uint8_t mask = 1<<(convergent_code & 0x07);
           key_state[convergent_code >> 3] |= mask;
           kbd_event = 1;
@@ -176,7 +179,7 @@ void init_keyboard()
 {
   uint8_t i;
 
-  for (i=0; i<32; i++) {
+  for (i=0; i<16; i++) {
     key_state[i] = 0;
   }
 
@@ -355,7 +358,7 @@ uint8_t convergent_map_code(uint8_t data, uint8_t extended)
         // Out of bounds of the scancode_map array.
         // Could be a control responds from the keyboard
         //    AA = BAT successful, etc
-        return 0;
+        return SCANCODE_NONE;
     }
 
     if (extended!=0) {
@@ -364,29 +367,34 @@ uint8_t convergent_map_code(uint8_t data, uint8_t extended)
         scancode = pgm_read_byte(&(scancode_map[data]));
     }
 
+    // this should NOT happen.
+    if (scancode >= 128) {
+        return SCANCODE_NONE;
+    }
+
     return scancode;
 }
 
 void convergent_send_packet()
 {
   uint8_t i;
-  uint8_t prev = 0;
+  uint8_t prev = SCANCODE_NONE;
 
   led_on();
 
-  // let's assume both 0 and 255 are unused.
+  // The largest possible scancode is 127.
   
-  for (i=1; i<255; i++) {
+  for (i=0; i<128; i++) {
     uint8_t mask = 1<<(i & 0x07);
-    if ((key_state[i>>3] & mask) != 0) {
-      if (prev!=0) {
+    if (((key_state[i>>3] & mask) != 0) || ((keypad_state[i>>3] & mask) !=0)) {
+      if (prev!=SCANCODE_NONE) {
         Serial.write(prev);
       }
       prev = i;
     }
   }
 
-  if (prev != 0) {
+  if (prev != SCANCODE_NONE) {
     // send the last key, with the high bit set to signal end of scan
     Serial.write(prev | 0x80);
   } else {
@@ -467,6 +475,8 @@ void setup() {
 
   convergent_init();
 
+  keypad_init();
+
   Serial.begin(1200);
 
   led_init();
@@ -481,14 +491,16 @@ void loop() {
     int ser_in;
   
     check_hardware_reset();
+    keypad_update();
     
     if (Serial.available() > 0) {
         handle_serial_input(Serial.read());  
     }
     
-    if (kbd_event != 0) {
+    if (kbd_event || keypad_event) {
         convergent_send_packet();
         kbd_event = 0;
+        keypad_event = 0;
     }
     if (ack_event != 0) {
       if (ps2_have_argument) {

@@ -1,5 +1,5 @@
 /* 
- * ps2convergent.c
+ * convergent-kbd-tiny85.ino
  *
  * PS2 Keyboard on a Convergent NGEN.
  *
