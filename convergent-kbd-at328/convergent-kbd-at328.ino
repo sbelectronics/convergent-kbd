@@ -48,9 +48,6 @@
 
 #define SCANCODE_NONE 0xFF
 
-#define LOW 0
-#define HIGH 1
-
 volatile uint8_t kbd_data;
 volatile uint8_t kbd_event;
 volatile uint8_t ack_event, nak_event;
@@ -488,8 +485,6 @@ void setup() {
 }
 
 void loop() {
-    int ser_in;
-  
     check_hardware_reset();
     keypad_update();
     
